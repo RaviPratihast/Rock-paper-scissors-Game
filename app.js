@@ -1,5 +1,8 @@
 'use strict';
 
+
+
+
 const box_divs=document.querySelectorAll('.box');
 const result_h2=document.querySelector('h2');
 
@@ -102,8 +105,16 @@ function winnerCheck(userInput,computerInput){
 function scoreWinner(){
     if(userScore>=10){
         console.log('user wins as he riches the 10 point goal');
+        resetGame()
     }else if(computerScore>=10){
         console.log('computer wins as it riches the 10 point');
+        resetGame()
     }
+}
+
+
+function resetGame(){
+    userScore_div.innerHTML=0;
+    computerScore_div.innerHTML=0;
 }
 

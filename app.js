@@ -1,11 +1,8 @@
 'use strict';
 
-// const { floor } = require("lodash-es");
-
-
 const box=document.querySelectorAll('.box');
 const result=document.querySelector('h1');
-// box.forEach(ele=>console.log(ele));
+
 
 let userInput;
 let computerInput;
@@ -15,25 +12,31 @@ box.forEach((e,i)=>{
 
         if(e.innerText==='👊'){
 
-            userInput='👊';
+            userInput='Rock';
             computerInput=computerValue();
+            // console.log(`user: ${userInput} and comp: ${computerInput}`);
+            winnerCheck(userInput,computerInput);
 
         }else if(e.innerText==='✋'){
 
-            userInput='✋';
+            userInput='Paper';
             computerInput=computerValue();
+            // console.log(`user: ${userInput} and comp: ${computerInput}`);
+            winnerCheck(userInput,computerInput);
 
             
 
         }else if(e.innerText==='✌️'){
             
-            userInput='✌️';
+            userInput='Scissor';
             computerInput=computerValue();
+            // console.log(`user: ${userInput} and comp: ${computerInput}`);
+            winnerCheck(userInput,computerInput);
 
         }
 
 
-        console.log(`user: ${userInput} and comp: ${computerInput}`);
+        
         
 
     })
@@ -42,14 +45,38 @@ box.forEach((e,i)=>{
 
 function computerValue(){
 
-    const arr=['👊','✋','✌️'];
-
-    
+    const arr=['Rock','Paper','Scissor'];
 
     let randomValue=Math.floor((Math.random()*3));
     return arr[randomValue];
     
 }
 
+// checking the winner of the game;
 
-computerValue();
+function winnerCheck(userInput,computerInput){
+    // winning part
+    switch(userInput+computerInput){
+        case 'RockScissor':
+        case 'ScissorPaper':
+        case 'PaperRock':
+            console.log(`winner user : user ${userInput} and computer ${computerInput}`);
+        break;
+
+        case 'ScissorRock':
+        case 'RockPaper':
+        case 'PaperScissor':
+            console.log(`winner computer: computer ${computerInput} and user ${userInput}`);
+        break;
+
+        case 'RockRock':
+        case 'ScissorScissor':
+        case 'PaperPaper':
+            console.log(`Draw between user and computer : computer ${computerInput} and user ${userInput}`);
+        break;
+    }
+}
+
+
+
+// computerValue();

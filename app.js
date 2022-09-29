@@ -8,36 +8,48 @@ const result=document.querySelector('h1');
 // box.forEach(ele=>console.log(ele));
 
 let userInput;
-let computeInput;
+let computerInput;
 
 box.forEach((e,i)=>{
     e.addEventListener('click',function(){
-        // console.log('clicked');
 
-        // show the clicked value
-        // console.log(e.textContent,i+1);
-        userInput=i+1;
-        console.log(`User:${userInput}`);
-        computeInput=computerValue();
-        console.log(`computer:${computeInput}`);
+        if(e.innerText==='👊'){
 
-        if(userInput>computeInput){
+            userInput='👊';
+            computerInput=computerValue();
 
-            result.textContent='User Input Wins';
-            console.log('user wins')
-        }else if(userInput<computeInput){
-            result.textContent='computer wins';
-            console.log('comp wins')
-        }else if(userInput===computeInput){
-            result.textContent='you tied';
-            console.log('draw');
+        }else if(e.innerText==='✋'){
+
+            userInput='✋';
+            computerInput=computerValue();
+
+            
+
+        }else if(e.innerText==='✌️'){
+            
+            userInput='✌️';
+            computerInput=computerValue();
+
         }
 
 
+        console.log(`user: ${userInput} and comp: ${computerInput}`);
+        
+
     })
-})
+});
 
 
 function computerValue(){
-    return Math.floor((Math.random()*3)+1);
+
+    const arr=['👊','✋','✌️'];
+
+    
+
+    let randomValue=Math.floor((Math.random()*3));
+    return arr[randomValue];
+    
 }
+
+
+computerValue();

@@ -1,7 +1,7 @@
 'use strict';
 
 const box_divs=document.querySelectorAll('.box');
-const result_h1=document.querySelector('h1');
+const result_h2=document.querySelector('h2');
 
 // score variables
 const userScore_div=document.querySelector('.user-score');
@@ -23,7 +23,7 @@ box_divs.forEach((e)=>{
            
            
 
-            result_h1.innerHTML= winnerCheck(userInput,computerInput);
+            result_h2.innerHTML= winnerCheck(userInput,computerInput);
             userScore_div.innerHTML=userScore;
             computerScore_div.innerHTML=computerScore;
             scoreWinner();
@@ -34,7 +34,7 @@ box_divs.forEach((e)=>{
             computerInput=computerValue();
             
 
-            result_h1.innerHTML= winnerCheck(userInput,computerInput);
+            result_h2.innerHTML= winnerCheck(userInput,computerInput);
             userScore_div.innerHTML=userScore;
             computerScore_div.innerHTML=computerScore;
             scoreWinner();
@@ -46,7 +46,7 @@ box_divs.forEach((e)=>{
             userInput='Scissor';
             computerInput=computerValue();
            
-            result_h1.innerHTML= winnerCheck(userInput,computerInput);
+            result_h2.innerHTML= winnerCheck(userInput,computerInput);
             userScore_div.innerHTML=userScore;
             computerScore_div.innerHTML=computerScore;
 

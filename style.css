@@ -1,0 +1,43 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.boxes-container{
+
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+
+}
+
+.box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+
+    margin: 0 20px;
+    height: 20px;
+    width: 70px;
+
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.result{
+    /* margin-top: 10px; */
+    color: black;
+}
+

@@ -15,14 +15,18 @@ box.forEach((e,i)=>{
             userInput='Rock';
             computerInput=computerValue();
             // console.log(`user: ${userInput} and comp: ${computerInput}`);
-            winnerCheck(userInput,computerInput);
+           
+
+            result.innerHTML= winnerCheck(userInput,computerInput);
 
         }else if(e.innerText==='✋'){
 
             userInput='Paper';
             computerInput=computerValue();
             // console.log(`user: ${userInput} and comp: ${computerInput}`);
-            winnerCheck(userInput,computerInput);
+            // winnerCheck(userInput,computerInput);
+
+            result.innerHTML= winnerCheck(userInput,computerInput);
 
             
 
@@ -31,7 +35,8 @@ box.forEach((e,i)=>{
             userInput='Scissor';
             computerInput=computerValue();
             // console.log(`user: ${userInput} and comp: ${computerInput}`);
-            winnerCheck(userInput,computerInput);
+            // winnerCheck(userInput,computerInput);
+            result.innerHTML= winnerCheck(userInput,computerInput);
 
         }
 
@@ -60,19 +65,19 @@ function winnerCheck(userInput,computerInput){
         case 'RockScissor':
         case 'ScissorPaper':
         case 'PaperRock':
-            console.log(`winner user : user ${userInput} and computer ${computerInput}`);
+            return (`winner user : user ${userInput} and computer ${computerInput}`);
         break;
 
         case 'ScissorRock':
         case 'RockPaper':
         case 'PaperScissor':
-            console.log(`winner computer: computer ${computerInput} and user ${userInput}`);
+            return (`winner computer: computer ${computerInput} and user ${userInput}`);
         break;
 
         case 'RockRock':
         case 'ScissorScissor':
         case 'PaperPaper':
-            console.log(`Draw between user and computer : computer ${computerInput} and user ${userInput}`);
+            return (`Draw between user and computer : computer ${computerInput} and user ${userInput}`);
         break;
     }
 }

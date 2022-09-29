@@ -14,7 +14,7 @@ box.forEach((e)=>{
 
             userInput='Rock';
             computerInput=computerValue();
-            // console.log(`user: ${userInput} and comp: ${computerInput}`);
+           
            
 
             result.innerHTML= winnerCheck(userInput,computerInput);
@@ -23,8 +23,7 @@ box.forEach((e)=>{
 
             userInput='Paper';
             computerInput=computerValue();
-            // console.log(`user: ${userInput} and comp: ${computerInput}`);
-            // winnerCheck(userInput,computerInput);
+            
 
             result.innerHTML= winnerCheck(userInput,computerInput);
 
@@ -34,8 +33,7 @@ box.forEach((e)=>{
             
             userInput='Scissor';
             computerInput=computerValue();
-            // console.log(`user: ${userInput} and comp: ${computerInput}`);
-            // winnerCheck(userInput,computerInput);
+           
             result.innerHTML= winnerCheck(userInput,computerInput);
 
         }
@@ -84,4 +82,3 @@ function winnerCheck(userInput,computerInput){
 
 
 
-// computerValue();

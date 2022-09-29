@@ -7,7 +7,7 @@ const result=document.querySelector('h1');
 let userInput;
 let computerInput;
 
-box.forEach((e,i)=>{
+box.forEach((e)=>{
     e.addEventListener('click',function(){
 
         if(e.innerText==='👊'){

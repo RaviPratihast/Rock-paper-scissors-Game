@@ -57,83 +57,80 @@ header{
     
 }
 header>h1{
-    font-size: 50px;
-    
-    
-    
+    font-size: 50px;  
 }
 
 /* score */
 
 .score-board-container{
     display: flex;
-    gap: 15px;
-
-    border: 2px solid black;
+    gap: 18px;
+    border: 2px solid var(--white-color);
     padding: 20px 60px;
-
+    border-radius: 10px 10px 10px 10px;
     position: relative;
 }
 
 .user-Card{
     position: absolute;
     top: 15px;
-    left: -30px;
-
-
-    border: 2px solid blue;
-    background-color: aliceblue;
-
-    padding: 4px 10px;
+    left: -40px;
+    border: 2px solid var(--white-color);
+    background-color:var(--bg-color);
+    padding: 4px 20px;
+    color:var(--white-color);
+    border-radius: 10px 10px 10px 10px;
 }
 
 .computer-Card{
     position: absolute;
     top:14px;
-    right:-45px;
-
-    border:2px solid red;
-    padding: 4px 10px;
-    background-color: white;
+    right:-75px;
+    border:2px solid var(--white-color);
+    padding: 4px 20px;
+    background-color:var(--bg-color);
+    color: var(--white-color);
+    border-radius: 10px 10px 10px 10px;
 
 }
 
 
 
 .boxes-container{
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px 0;
-
-
 }
 
 .box{
     display:flex;
     justify-content: center;
     align-items: center;
-    
-    /* flex-direction: column; */
-
     margin: 0 20px;
     height: 150px;
     width: 150px;
     font-size: 95px;
-
-    border: 5px solid black;
+    border: 5px solid var(--white-color);
     border-radius: 50%;
     cursor: pointer;
-    background-color: var(--white-color);
+    background-color: var(--bg-color);
     
 }
 
 
 
 
-.result{
-    /* margin-top: 10px; */
+.result{   
     color: black;
 }
 
+
+
+footer{
+    margin-inline: 10px ;
+}
+
+.footer-text{
+    font-size: 10px;
+}

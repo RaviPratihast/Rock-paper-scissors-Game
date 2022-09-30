@@ -24,12 +24,16 @@ box_divs.forEach((e)=>{
             userInput='Rock';
             computerInput=computerValue();
            
-           
+        //    comparing both value -> who wins.
 
-            result_h2.innerHTML= winnerCheck(userInput,computerInput);
-            userScore_div.innerHTML=userScore;
-            computerScore_div.innerHTML=computerScore;
-            scoreWinner();
+            let winner=winnerCheck(userInput,computerInput);
+
+            console.log(winner)
+            result_h2.innerHTML= winner.text;
+            userScore_div.innerHTML=winner.userScore;
+            computerScore_div.innerHTML=winner.computerScore;
+          
+           
 
         }else if(e.innerText==='✋'){
 
@@ -37,10 +41,11 @@ box_divs.forEach((e)=>{
             computerInput=computerValue();
             
 
-            result_h2.innerHTML= winnerCheck(userInput,computerInput);
-            userScore_div.innerHTML=userScore;
-            computerScore_div.innerHTML=computerScore;
-            scoreWinner();
+            let winner= winnerCheck(userInput,computerInput);
+            result_h2.innerHTML= winner.text;
+            userScore_div.innerHTML=winner.userScore;
+            computerScore_div.innerHTML=winner.computerScore;
+          
 
             
 
@@ -49,9 +54,12 @@ box_divs.forEach((e)=>{
             userInput='Scissor';
             computerInput=computerValue();
            
-            result_h2.innerHTML= winnerCheck(userInput,computerInput);
-            userScore_div.innerHTML=userScore;
-            computerScore_div.innerHTML=computerScore;
+            let winner=winnerCheck(userInput,computerInput);
+            result_h2.innerHTML= winner.text;
+            userScore_div.innerHTML=winner.userScore;
+            computerScore_div.innerHTML=winner.computerScore;
+            
+           
 
         }
 
@@ -62,6 +70,8 @@ box_divs.forEach((e)=>{
     })
 });
 
+
+// random value generated my computer.
 
 function computerValue(){
 
@@ -75,46 +85,40 @@ function computerValue(){
 // checking the winner of the game;
 
 function winnerCheck(userInput,computerInput){
+
+    console.log( userScore);
     // winning part
     switch(userInput+computerInput){
         case 'RockScissor':
         case 'ScissorPaper':
         case 'PaperRock':
             
-            userScore++;
-            return (`winner user : user ${userInput} and computer ${computerInput}`);
-        break;
+
+        // userScore++.t
+            // console.log(userScore);          
+            //   return (`User Wins : user : ${userInput} and computer: ${computerInput}`);
+
+            return { text: `User Wins : user : ${userInput} and computer: ${computerInput}` , userScore: ++userScore , computerScore:computerScore};
+  
 
         case 'ScissorRock':
         case 'RockPaper':
         case 'PaperScissor':
 
-            computerScore++;
-            return (`winner computer: computer ${computerInput} and user ${userInput}`);
-        break;
+        // computerScore++;
+            // return (`winner computer: computer ${computerInput} and user ${userInput}`);
+
+            return { text: `computer Wins :computer ${computerInput} and user ${userInput} `, computerScore: ++computerScore, userScore:userScore};
+
 
         case 'RockRock':
         case 'ScissorScissor':
         case 'PaperPaper':
          
-            return (`Draw between user and computer : computer ${computerInput} and user ${userInput}`);
-        break;
+            // return (`Draw between user and computer : computer ${computerInput} and user ${userInput}`);
+          return  { text: `Draw between user and computer : computer ${computerInput} and user ${userInput}`, computerScore:computerScore, userScore:userScore};
+
     }
 }
 
-function scoreWinner(){
-    if(userScore>=10){
-        console.log('user wins as he riches the 10 point goal');
-        resetGame()
-    }else if(computerScore>=10){
-        console.log('computer wins as it riches the 10 point');
-        resetGame()
-    }
-}
-
-
-function resetGame(){
-    userScore_div.innerHTML=0;
-    computerScore_div.innerHTML=0;
-}
 
